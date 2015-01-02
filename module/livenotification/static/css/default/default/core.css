@@ -6,3 +6,33 @@
     width: 200px;
     height: auto;
 }
+
+.ln-item {
+    width: 250px;
+    height: 100px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.fl {
+    float: left;
+    vertical-align: top;
+}
+
+.fr {
+    float: right; 
+    vertical-align: top;
+}
+
+.cl {
+    clear: both;
+}
+
+.user_image {
+    width: 45px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.item_info {
+    width: 195px;
+}
