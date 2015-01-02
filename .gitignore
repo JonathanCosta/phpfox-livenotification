@@ -1,0 +1,15 @@
+file/
+include/
+install/
+static/
+theme/
+!module/
+module/*
+!module/livenotification/
+api.php
+auth.php
+favicon.ico
+htaccess.txt
+index.php
+robots.txt
+token.php
