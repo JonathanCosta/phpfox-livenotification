@@ -18,13 +18,13 @@ var LN = {
     check: function() {
         // call ajax to check if there is new notifications
         $.ajaxCall('livenotification.check');
-        setTimeout('LN.check()', 30000); // recall every 5 seconds
+        setTimeout('LN.check()', 5000); // recall every 5 seconds
     },
     attach: function(content) {
         if (content === '') return false;
         this.container.append(content);
         this.container.show();
-        //setTimeout('LN.clean()', 60000); // clean after 3 seconds
+        setTimeout('LN.clean()', 3000); // clean after 3 seconds
     },
     clean: function() {
         this.container.hide();
