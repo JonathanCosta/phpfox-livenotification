@@ -9,7 +9,8 @@ var LN = {
         }
     },
     check: function() {
-        console.log('check');
+        // call ajax to check if there is new notifications
+        
         setTimeout('LN.check()', 5000); // recall every 5 seconds
     }
 }; // LN means Live Notification
