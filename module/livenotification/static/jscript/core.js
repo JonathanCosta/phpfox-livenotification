@@ -3,12 +3,13 @@ var LN = {
     options: {
         started: false,
         delayCheck: 5000,
-        delayClean: 3000
+        delayClean: 3000,
+        onCheck: false
     },
     
     init: function() {
-        this.options.delayCheck = ln_delay_check;
-        this.options.delayClean = ln_delay_clean;
+        this.options.delayCheck = ln_delay_check * 1000;
+        this.options.delayClean = ln_delay_clean * 1000;
         
         if (!this.options.started) {
             this.check();
@@ -21,16 +22,19 @@ var LN = {
         }
     },
     check: function() {
+        if (this.options.onCheck) return false;
+        
         // call ajax to check if there is new notifications
+        this.options.onCheck = true;
         $.ajaxCall('livenotification.check');
         setTimeout('LN.check()', this.options.delayCheck);
     },
     attach: function(content) {
         if (content === '') return false;
-        if (!this.options.delayClean) return false;
+        this.options.onCheck = false;
         this.container.append(content);
         this.container.show();
-        setTimeout('LN.clean()', this.options.delayClean);
+        if (this.options.delayClean) setTimeout('LN.clean()', this.options.delayClean);
     },
     clean: function() {
         this.container.hide();
