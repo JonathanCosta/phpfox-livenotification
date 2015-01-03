@@ -2,6 +2,7 @@ phpfox-livenotification
 =======================
 
 Display notification right on the website whenever receive new notifications
+![demo](https://cloud.githubusercontent.com/assets/6072939/5602429/32295376-937f-11e4-8c63-726725ac785f.png)
 
 Installation Guide:
 - Backup your site first, or you can install on your development site for making sure all things goes correct.
