@@ -11,7 +11,6 @@ defined('PHPFOX') or exit('NO DICE!');
             <span>{$aNotification.message}</span>
         </div>
         <div class="time_like">
-            <div class="fl like_button"><img src="theme/frontend/default/style/default/image/layout/like.png"></div>
             <div class="fl time_stamp"><span>{$aNotification.time_stamp|convert_time}</span></div>
             <div class="cl"></div>
         </div>
