@@ -21,7 +21,9 @@ class Livenotification_Service_Notification extends Phpfox_Service {
                 ->leftJoin($this->_sTableLive, 'l', 'l.notification_id = n.notification_id')
                 ->where(array(
                     ' AND n.user_id = ' . (int) $iUserId,
-                    ' AND (l.is_seen is NULL OR l.is_seen = 0)'
+                    ' AND n.is_seen = 0',
+                    ' AND (l.is_seen is NULL OR l.is_seen = 0)',
+                    ' AND n.time_stamp >= ' . (PHPFOX_TIME - (15 * 1000)) // only get recent 15 mins
                 ))
                 ->group('n.type_id, n.item_id')
                 ->order('n.is_seen ASC, n.time_stamp DESC')
