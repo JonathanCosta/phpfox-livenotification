@@ -1,0 +1,20 @@
+<module>
+	<data>
+		<module_id>livenotification</module_id>
+		<product_id>livenotification</product_id>
+		<is_core>0</is_core>
+		<is_active>1</is_active>
+		<is_menu>0</is_menu>
+		<menu></menu>
+		<phrase_var_name>module_livenotification</phrase_var_name>
+	</data>
+	<settings>
+		<setting group="" module_id="livenotification" is_hidden="0" type="integer" var_name="notification_check" phrase_var_name="setting_notification_check" ordering="1" version_id="3.7.7">5</setting>
+		<setting group="" module_id="livenotification" is_hidden="0" type="integer" var_name="notification_clean" phrase_var_name="setting_notification_clean" ordering="1" version_id="3.7.7">0</setting>
+	</settings>
+	<phrases>
+		<phrase module_id="livenotification" version_id="3.7.7" var_name="module_livenotification" added="1420165608">Display notifications in real time</phrase>
+		<phrase module_id="livenotification" version_id="3.7.7" var_name="setting_notification_check" added="1420254551"><![CDATA[<title>Refresh notification time</title><info>How long we will recheck for notifications</info>]]></phrase>
+		<phrase module_id="livenotification" version_id="3.7.7" var_name="setting_notification_clean" added="1420254637"><![CDATA[<title>Clean the notification</title><info>How long we will hide the notification (not delete, just hiding)</info>]]></phrase>
+	</phrases>
+</module>
