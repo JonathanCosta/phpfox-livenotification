@@ -98,4 +98,27 @@ class Livenotification_Service_Notification extends Phpfox_Service {
         return $aRow;
     }
 
+    public function read($iId) {
+        $iId  = (int) $iId;
+        if (!$iId) return false;
+        $aRow = $this->database()->select('*')
+                     ->from($this->_sTableLive)
+                     ->where('notification_id = ' . $iId)
+                     ->execute('getSlaveRow');
+        
+        if (!$aRow) {
+            $this->database()->insert($this->_sTableLive, array(
+                'notification_id' => $iId,
+                'is_seen' => 1,
+                'timestamp' => PHPFOX_TIME
+            ));
+        } else {
+            $this->database()->update($this->_sTableLive, array(
+                'is_seen'   => 1,
+                'timestamp' => PHPFOX_TIME
+            ), 'notification_id = ' . $iId);
+        }
+        
+        return true;
+    }
 }

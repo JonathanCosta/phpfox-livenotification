@@ -29,16 +29,20 @@ var LN = {
         $.ajaxCall('livenotification.check');
         setTimeout('LN.check()', this.options.delayCheck);
     },
-    attach: function(content) {
+    attach: function(content, ids) {
         if (content === '') return false;
         this.options.onCheck = false;
         this.container.append(content);
         this.container.show();
+        this.read(ids);
         if (this.options.delayClean) setTimeout('LN.clean()', this.options.delayClean);
     },
     clean: function() {
         this.container.hide();
         this.container.html('');
+    },
+    read: function(ids) {
+        $.ajaxCall('livenotification.read', 'ids=' + ids.join());
     }
 }; // LN means Live Notification
 $Behavior.onLiveNotificationLoaded = function() {
